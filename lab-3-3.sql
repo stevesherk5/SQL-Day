@@ -1,7 +1,12 @@
 -- In the modern era (1960-present), how many regular season games did the best team win each season?
 -- Challenge: Try to include the team's name in the results. Is it accurate?
 
-SELECT year, name, MAX(wins)
+-- can't include name in the SELECT line, because we can't also put it in the GROUP BY function.
+-- we can't trust that the name is actually the team that earned the most wins that year 
+-- there are more advanced SQL techniques to include the team name in the results, but...
+-- we are not there yet. 
+
+SELECT year, MAX(wins)
 FROM teams
 WHERE year>=1960
 GROUP BY year
